@@ -1,0 +1,19 @@
+user_note: null  # str
+plumbing: true   # for dev/debug use
+seed: 0
+device: cuda:0
+batch_size: 128
+
+dataset:
+  module: torchvision.datasets
+  class_name: CIFAR10
+  kwargs:
+    root: C:/Users/chiwe/Data
+
+model:
+  module: torchvision.models
+  class_name: resnet18
+
+hydra:
+  run:
+    dir: ./runs/${now:%Y%m%d-%H%M%S}
